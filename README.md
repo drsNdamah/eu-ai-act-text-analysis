@@ -1,56 +1,76 @@
-# eu-ai-act-text-analysis
-Text mining and NLP analysis of the EU AI Act
 
-
-```markdown
 # 🧠 EU AI Act Text Analysis
 
-This project explores the **language of the EU Artificial Intelligence Act** using Natural Language Processing (NLP). By processing the official text, we extract the most frequent and meaningful terms to highlight the Act’s regulatory priorities — such as risk, compliance, and transparency.
+A Natural Language Processing (NLP) project that analyzes the text of the European Union Artificial Intelligence Act. The goal is to highlight key themes, regulatory focus areas, and term frequencies through text cleaning, lemmatization, and visualization.
 
-This analysis helps policymakers, researchers, and legal tech professionals better understand how the legislation is framed and what themes are emphasized.
+#
+## 📊 What This Project Does
+
+- ✅ Extracts raw text from the official EU AI Act PDF
+- 🧼 Cleans and lemmatizes the text using `spaCy`
+- 🧱 Removes common and domain-specific stopwords
+- 📈 Performs word frequency analysis
+- 🌥️ Generates a word cloud
+- 📸 Produces visualizations for reports or LinkedIn
 
 ---
 
-## 📁 Project Structure
+## 🗂️ Project Structure
 
 ```
 eu-ai-act-text-analysis/
 │
-├── README.md             # Project overview (this file)
-├── requirements.txt      # Python dependencies
-├── data/                 
-│   └── eu_ai_act.pdf     # Source text (or sample placeholder)
-├── notebooks/            
-│   ├── 01_text_extraction_cleaning.ipynb
-│   └── 02_frequency_analysis.ipynb
-├── src/                  
-│   ├── extract_text.py
-│   ├── clean_text.py
-│   └── frequency_analysis.py
-├── output/               
-│   ├── frequency_table.csv
-│   └── wordcloud.png
-├── images/               
-│   └── table_visual.png  # Visual summary for LinkedIn or presentation
+├── README.md               # Project overview
+├── requirements.txt        # Python dependencies
+├── data/                   
+│   └── eu_ai_act.pdf       # Source PDF of the AI Act
+├── src/                    # Modular Python code
+│   ├── extract_text.py     # PDF text extraction
+│   ├── clean_text.py       # Lemmatization & stopword removal
+│   ├── frequency_analysis.py # Frequency counts
+│   ├── generate_wordcloud.py # Word cloud generation
+│   └── main.py             # Orchestrates all steps
+├── output/                 
+│   ├── frequency_table.csv # Word frequencies
+│   └── wordcloud.png       # Generated word cloud
+├── images/
+│   └── table_visual.png    # Visual summary for sharing
 └── LICENSE
 ```
 
 ---
 
-## 🔧 Features
+## 🚀 Quickstart
 
-- 📄 Extracts text from PDF using `PyMuPDF`
-- 🧹 Cleans and lemmatizes using `spaCy`
-- 🛑 Removes both generic and domain-specific stopwords
-- 📊 Counts word frequencies and exports them as CSV
-- 🌥️ Generates a word cloud
-- 📷 Includes a table-style image for sharing insights
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/eu-ai-act-text-analysis.git
+cd eu-ai-act-text-analysis
+```
+
+### 2. Set up your environment
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
+
+### 4. Add your input
+Place the `eu_ai_act.pdf` file inside the `data/` folder.
+
+### 5. Run the project
+```bash
+python src/main.py
+```
 
 ---
 
-## 📝 Sample Output: Top Words
-
-**Top 10 Words in the EU AI Act:**
+## 📈 Sample Output: Top Terms
 
 | 🔠 Word      | 🔢 Frequency | 💬 Interpretation                                |
 |-------------|--------------|--------------------------------------------------|
@@ -64,91 +84,51 @@ eu-ai-act-text-analysis/
 | market      | 403          | Attention to the internal EU market.            |
 | model       | 366          | Regulation of the underlying model.             |
 | person      | 348          | Individual rights and impact.                   |
+#
 
-> View the table image: [`images/table_visual.png`](images/table_visual.png)
 
----
 
-## 🚀 Getting Started
+## ⚙️ Requirements
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/eu-ai-act-text-analysis.git
-cd eu-ai-act-text-analysis
-```
+- `spacy`
+- `pymupdf`
+- `pandas`
+- `matplotlib`
+- `wordcloud`
 
-### 2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-Or, if using a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-```
-
----
-
-## 🧪 Run the Code
-
-- Run the Jupyter Notebooks in the `notebooks/` folder for step-by-step execution
-- Or execute Python scripts in `src/` for modular use:
-  ```bash
-  python src/extract_text.py
-  python src/clean_text.py
-  python src/frequency_analysis.py
-  ```
-
-Make sure `data/eu_ai_act.pdf` exists before running.
-
----
-
-## 🛠 Requirements
-
-Your `requirements.txt` includes:
-
-```
-spacy
-pymupdf
-pandas
-matplotlib
-wordcloud
-```
-
-Run:
+Install with:
 ```bash
 pip install -r requirements.txt
 ```
 
-And download the spaCy model if not already installed:
+---
 
-```bash
-python -m spacy download en_core_web_sm
-```
+## 📁 Output
+
+- `output/frequency_table.csv`: CSV file with word frequencies
+- `output/wordcloud.png`: Word cloud image of filtered terms
+- `images/table_visual.png`: Clean visualization for sharing
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+MIT License. See the [LICENSE](LICENSE) file for full details.
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests and feedback are welcome! Whether you want to extend the analysis, improve visuals, or explore other legislation — let's collaborate.
+Pull requests, ideas, and forks are welcome! You can improve visuals, expand the analysis to other legislation, or add interactive dashboards.
 
 ---
 
-## 📬 Contact
+## 👤 Author
 
 Built with ❤️ by [drsNdamah]  
-🔗 [LinkedIn]([https://www.linkedin.com/](https://www.linkedin.com/in/kweku-ndamah-arthur-34b9811aa/))
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/kweku-ndamah-arthur-34b9811aa/)
 
 ---
-
 ```
 
-Would you like me to generate the `requirements.txt` content based on your project as well?
+Would you like this saved as a file or pushed to your GitHub repo in a PR format?
